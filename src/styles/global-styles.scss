@@ -1,5 +1,27 @@
+@font-face {
+  font-family: 'BalooBhaijaan';
+  src: url('../assets/fonts/BalooBhaijaan2-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BalooBhaijaan';
+  src: url('../assets/fonts/BalooBhaijaan2-Medium.ttf') format('truetype');
+  font-weight: 500; 
+  font-style: medium;
+}
+
+@font-face {
+  font-family: 'BalooBhaijaan';
+  src: url('../assets/fonts/BalooBhaijaan2-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
+}
+
 html {
   box-sizing: border-box;
+  direction: rtl;
 }
 
 *,
@@ -14,4 +36,21 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  font-family: 'BalooBhaijaan', sans-serif;
+  font-weight: 400
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
