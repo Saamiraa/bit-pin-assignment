@@ -1,0 +1,11 @@
+{
+  "layout": {
+    "header": {
+      "easyPurchase": "خرید آسان",
+      "trade": "معامله",
+      "cryptoCurrencyPrice": "قیمت ارز دیجیتال",
+      "features": "امکانات",
+      "education": "آموزش"
+    }
+  }
+}
