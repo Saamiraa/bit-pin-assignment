@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.footerSection {
+  line-height: 18px;
+}
+
+.footerTitle {
+  font-weight: 700;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+
+.footerItem {
+  font-size: 12px;
+}

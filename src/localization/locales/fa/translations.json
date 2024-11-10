@@ -1,0 +1,45 @@
+{
+  "layout": {
+    "header": {
+      "easyPurchase": "خرید آسان",
+      "trade": "معامله",
+      "cryptoCurrencyPrice": "قیمت ارز دیجیتال",
+      "features": "امکانات",
+      "education": "آموزش"
+    },
+    "footer": {
+      "products": {
+        "title": "محصولات",
+        "items": {
+          "easyPurchase": "خرید آسان",
+          "loan": "وام",
+          "bot": "بات"
+        }
+      },
+      "about": {
+        "title": "درباره بیت پین",
+        "items": {
+          "contactUs": "تماس با ما",
+          "careers": "استخدام",
+          "terms": "شرایط و مقررات"
+        }
+      },
+      "services": {
+        "title": "خدمات",
+        "items": {
+          "supportChat": "چت پشتیبانی",
+          "userGuide": "راهنمای استفاده",
+          "academy": "آکادمی"
+        }
+      },
+      "cryptoPrices": {
+        "title": "قیمت ارزهای دیجیتال",
+        "items": {
+          "bitcoinPrice": "قیمت بیت‌کوین",
+          "ethereumPrice": "قیمت اتریوم",
+          "tetherPrice": "قیمت تتر"
+        }
+      }
+    }
+  }
+}

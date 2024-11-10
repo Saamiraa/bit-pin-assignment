@@ -8,7 +8,7 @@
 @font-face {
   font-family: 'BalooBhaijaan';
   src: url('../assets/fonts/BalooBhaijaan2-Medium.ttf') format('truetype');
-  font-weight: 500; 
+  font-weight: 500;
   font-style: medium;
 }
 
@@ -34,6 +34,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
@@ -50,7 +51,26 @@ ol {
   padding: 0;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: inherit;
+  line-height: inherit;
   color: inherit;
 }
