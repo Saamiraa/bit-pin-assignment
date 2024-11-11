@@ -1,0 +1,20 @@
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.errorMessageButtonContainer {
+  margin: 0 auto;
+
+}
+
+.errorMessageButton {
+  background-color: #e22424;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}

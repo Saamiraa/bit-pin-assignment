@@ -1,0 +1,31 @@
+.cryptoCard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  font-size: 12px;
+}
+
+.cryptoCard:hover {
+  background-color: #e5e7f0;
+  cursor: pointer;
+}
+
+.cryptoCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cryptoTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cryptoImage {
+  width: 32px;
+}
+
+.cryptoCode {
+  font-size: 10px;
+}

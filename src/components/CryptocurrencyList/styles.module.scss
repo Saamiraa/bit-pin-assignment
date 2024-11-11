@@ -1,11 +1,11 @@
 .cryptoContainer {
-  margin: 12px 24px;
+  margin: 12px 120px;
   border: 1px solid rgba(29, 29, 29, 0.12);
   border-radius: 6px;
 }
 
 .filterButtonsContainer {
-  padding: 8px 12px;
+  padding: 8px 18px;
 }
 
 .filterButtons {
@@ -15,4 +15,41 @@
   align-items: center;
   border: 0.4px solid rgba(22, 22, 22, 0.43);
   border-radius: 4px;
+}
+
+.cryptoList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+  border-top: 1px solid rgba(29, 29, 29, 0.12);
+}
+
+.cryptoListHeader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 14px;
+}
+
+.paginationControls {
+  padding: 32px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.paginationButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  border-radius: 50%;
+  background-color: #e5e7f0;
+  width: 40px;
+  height: 40px;
+}
+
+.paginationButton:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
