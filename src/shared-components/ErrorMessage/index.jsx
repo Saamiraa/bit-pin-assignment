@@ -1,13 +1,16 @@
 /* eslint-disable react/prop-types */
+
+import { t } from "i18next"
+
 import styles from './styles.module.scss';
 
 function ErrorMessage({ onRetry }) {
   return (
     <div className={styles.errorMessage}>
-      <p className={styles.errorMessageText}>error</p>
+      <p className={styles.errorMessageText}>{t("error.errorMessage")}</p>
       <div className={styles.errorMessageButtonContainer}>
         <button className={styles.errorMessageButton} onClick={onRetry}>
-          retry
+          {t("error.retry")}
         </button>
       </div>
     </div>

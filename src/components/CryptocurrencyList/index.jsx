@@ -5,15 +5,14 @@ import useFetchCryptoMarket from "../../hooks/use-fetch-crypto-market";
 import Loading from "../../shared-components/Loading";
 import ErrorMessage from "../../shared-components/ErrorMessage";
 
-
-
-import styles from './style.module.scss'
 import FilterButtons from "./components/FilterButtons";
 import CryptoListContent from "./components/CryptoListContent";
 import PaginationControls from "./components/PaginationControls";
 
+import styles from './style.module.scss'
+
 function CryptocurrencyList() {
-  const { isLoading, hasError, marketsData } = useFetchCryptoMarket();
+  const { isLoading, hasError, marketsData, fetchMarkets } = useFetchCryptoMarket();
 
   const [activeTab, setActiveTab] = useState("irtTab");
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,7 +31,7 @@ function CryptocurrencyList() {
 
   const renderContent = () => {
     if (isLoading) return <Loading />;
-    if (hasError) return <ErrorMessage />;
+    if (hasError) return <ErrorMessage onRetry={fetchMarkets} />;
 
     return (
       <div className={styles.cryptoContainer}>

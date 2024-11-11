@@ -2,6 +2,8 @@
 
 import Button from "../Button/Button";
 
+import { t } from "i18next"
+
 import styles from './style.module.scss'
 
 function FilterButtons({ activeTab, onTabChange }) {
@@ -11,12 +13,12 @@ function FilterButtons({ activeTab, onTabChange }) {
         <Button
           isActive={activeTab === "irtTab"}
           onClick={() => onTabChange("irtTab")}
-          label="تومان"
+          label={t("cryptoList.filterButtons.tomanButton")}
         />
         <Button
           isActive={activeTab === "usdtTab"}
           onClick={() => onTabChange("usdtTab")}
-          label="تتر"
+          label={t("cryptoList.filterButtons.tetherButton")}
         />
       </div>
     </div>

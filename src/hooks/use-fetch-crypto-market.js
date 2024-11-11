@@ -25,7 +25,7 @@ function useFetchCryptoMarket() {
     fetchMarkets();
   }, [fetchMarkets]);
 
-  return { isLoading, hasError, marketsData };
+  return { isLoading, hasError, marketsData, fetchMarkets };
 }
 
 export default useFetchCryptoMarket;

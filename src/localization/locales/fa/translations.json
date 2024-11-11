@@ -41,5 +41,19 @@
         }
       }
     }
+  },
+  "error": {
+    "errorMessage": "مشکلی پیش آمده است، دوباره تلاش کنید.",
+    "retry": "تلاش دوباره"
+  },
+  "cryptoList": {
+    "filterButtons": {
+      "tomanButton": "تومان",
+      "tetherButton": "تتر"
+    },
+    "content": {
+      "name": "نام رمز ارز",
+      "price": "قیمت"
+    }
   }
 }
