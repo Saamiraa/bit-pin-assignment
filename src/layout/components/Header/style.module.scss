@@ -4,6 +4,10 @@
   justify-content: space-between;
   padding: 12px 24px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  position: fixed;
+  z-index: 111;
+  background-color: #fff;
+  width: 100%;
 }
 
 .headerTitleList {
