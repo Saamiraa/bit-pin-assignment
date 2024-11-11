@@ -1,4 +1,4 @@
-.filterButton {
+.button {
   border: none;
   outline: none;
   padding: 10px 20px;
@@ -11,7 +11,7 @@
   font-family: 'Vazir', sans-serif;
 }
 
-.filterButton.active {
+.button.active {
   background-color: #e5e7f0;
   color: #41454a;
 }
