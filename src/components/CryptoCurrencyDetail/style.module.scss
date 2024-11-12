@@ -1,0 +1,37 @@
+.cryptoDetailContainer {
+  margin: 12px 120px;
+  width: 100%;
+}
+
+.sectionHeader {
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 1px solid transparent;
+
+  p {
+    margin: 0;
+    color: black;
+  }
+}
+
+.activeTab {
+  border-bottom: 1px solid green;
+
+  p {
+    color: green;
+  }
+}
+
+.defaultTab {
+  border-bottom: 1px solid rgba(29, 29, 29, 0.12);
+  ;
+}
+
+.detailsContent {}
