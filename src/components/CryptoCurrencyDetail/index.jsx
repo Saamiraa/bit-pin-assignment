@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import styles from './style.module.scss'
+import Buy from './components/OrdersList/components/Buy'
+import Sell from './components/OrdersList/components/Sell'
+import Transactions from './components/Transactions'
 
 function CryptoCurrencyDetail() {
 
@@ -28,7 +31,11 @@ function CryptoCurrencyDetail() {
           <p>معاملات</p>
         </div>
       </div>
-      <div className={styles.detailsContent}></div>
+      <div className={styles.detailsContent}>
+        {activeTab === 'buyOrders' && <Buy />}
+        {activeTab === 'sellOrders' && <Sell />}
+        {activeTab === 'trades' && <Transactions />}
+      </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useNavigate } from 'react-router-dom';
-import { localizedNumber } from '../../../../utils';
+import { localizedNumber } from '../../../../utils/localizedNumber';
 import styles from './styles.module.scss'
 
 function CryptoItem({ data }) {

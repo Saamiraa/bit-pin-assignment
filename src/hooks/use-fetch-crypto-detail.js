@@ -30,7 +30,7 @@ function useFetchCryptoDetail(marketId, queryType) {
         setHasError(true)
       })
       .finally(() => {
-        setIsLoading(true)
+        setIsLoading(false)
       })
   }, [marketId, queryType])
 
@@ -38,9 +38,7 @@ function useFetchCryptoDetail(marketId, queryType) {
     fetchMarketDetail()
   }, [fetchMarketDetail])
 
-  return {
-    isLoading, hasError, marketsDetailData
-  }
+  return { isLoading, hasError, marketsDetailData, fetchMarketDetail }
 }
 
 export default useFetchCryptoDetail;
