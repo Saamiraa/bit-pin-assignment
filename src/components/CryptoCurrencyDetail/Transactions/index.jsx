@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
 
-import useFetchCryptoDetail from "../../../../hooks/use-fetch-crypto-detail";
-
-import Loading from "../../../../shared-components/Loading";
-import ErrorMessage from "../../../../shared-components/ErrorMessage";
-
 import styles from './style.module.scss'
-import { getPersianDateTime } from "../../../../utils/time";
+import useFetchCryptoDetail from "../../../hooks/use-fetch-crypto-detail";
+import Loading from "../../../shared-components/Loading";
+import ErrorMessage from "../../../shared-components/ErrorMessage";
+import { getPersianDateTime } from "../../../utils/time";
 
 function Transactions() {
 

@@ -1,0 +1,47 @@
+.ordersListInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ordersListInput {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.ordersListInput:focus {
+  border-color: #e5e7f0;
+  box-shadow: 0 0 1px #e5e7f0;
+}
+
+.ordersListButton {
+  padding: 10px 12px;
+  margin-left: 10px;
+  background-color: #e5e7f0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: black;
+  font-family: 'Vazir'
+}
+
+.ordersListButton:hover {
+  background-color: #b0b7d3;
+}
+
+.ordersListButton:active {
+  background-color: #b0b7d3;
+}
+
+.ordersListButton:focus {
+  outline: none;
+  box-shadow: 0 0 1px #b0b7d3;
+}

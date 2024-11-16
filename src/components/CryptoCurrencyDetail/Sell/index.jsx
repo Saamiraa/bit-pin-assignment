@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
-
-import OrdersList from "../.."
+import OrdersList from "../components/OrderList"
 
 function Sell() {
 

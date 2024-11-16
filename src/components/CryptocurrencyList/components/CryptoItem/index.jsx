@@ -16,6 +16,7 @@ function CryptoItem({ data }) {
   const id = data.id
 
   const handleNavigation = (id) => {
+    console.log(id)
     navigate(`/coin/${id}`)
   }
 
