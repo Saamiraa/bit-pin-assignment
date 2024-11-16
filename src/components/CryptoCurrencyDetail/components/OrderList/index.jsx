@@ -28,7 +28,7 @@ function OrderList({ id, type }) {
           <OrderTableRow key={index} price={order.price} value={order.value} remain={order.remain} />
         ))}
         <OrderSummaryDetails orders={topTenOrders} />
-        <OrderPercentageCalculator />
+        <OrderPercentageCalculator orders={topTenOrders} />
       </div>
     )
   }
