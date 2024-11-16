@@ -52,12 +52,12 @@ export const calculateTotalPayable = (data, percentage) => {
     remainToTake = remainToTake.minus(usableRemain);
   });
 
-  return totalPayable.toFixed(2);
+  return totalPayable.toString();
 };
 
 export const calculateWeightedAveragePrice = (payableAmount, receivableAmount) => {
   const totalPayable = new Decimal(payableAmount || "0");
   const totalReceivable = new Decimal(receivableAmount || "1");
 
-  return totalPayable.div(totalReceivable).toFixed(2);
+  return totalPayable.div(totalReceivable).toString();
 };

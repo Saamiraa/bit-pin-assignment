@@ -10,12 +10,12 @@ function Transactions() {
 
   const { id } = useParams()
 
-  const { isLoading, hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, 'matches')
+  const { hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, 'matches')
 
   const topTenOrders = marketsDetailData ? marketsDetailData.slice(0, 10) : [];
 
   const renderContent = () => {
-    if (isLoading) return <Loading />;
+    if (marketsDetailData.length === 0 && !hasError) return <Loading />;
     if (hasError) return <ErrorMessage onRetry={fetchMarketDetail} />
 
     return (

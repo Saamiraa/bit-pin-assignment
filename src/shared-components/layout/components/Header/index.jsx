@@ -1,4 +1,4 @@
-import icon from '../../../assets/images/icon.svg'
+import icon from '../../../../assets/images/icon.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { t } from "i18next"

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import Layout from "./layout"
 import Home from "./pages/Home"
 import CryptoCurrency from "./pages/CryptoCurrency"
+import Layout from "./shared-components/layout"
 
 function App() {
   return (

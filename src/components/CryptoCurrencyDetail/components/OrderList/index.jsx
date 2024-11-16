@@ -11,14 +11,16 @@ import styles from './style.module.scss'
 
 function OrderList({ id, type }) {
 
-  const { isLoading, hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, type)
+  const { hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, type)
+
+  console.log(marketsDetailData)
 
   const orderBookData = marketsDetailData.orders;
 
   const topTenOrders = orderBookData ? orderBookData.slice(0, 10) : [];
 
   const renderContent = () => {
-    if (isLoading) return <Loading />;
+    if (marketsDetailData.length === 0 && !hasError) return <Loading />;
     if (hasError) return <ErrorMessage onRetry={fetchMarketDetail} />
 
     return (

@@ -2,39 +2,51 @@
 import { useState } from 'react';
 import styles from './style.module.scss';
 import { calculateTotalPayable, calculateTotalReceivableAmount, calculateTotalRemain, calculateWeightedAveragePrice } from '../../../../utils/calculateDecimal';
+import OrderResult from '../OrderResult';
 
 function OrderPercentageCalculator({ orders }) {
-  console.log(orders)
   const [orderInput, setOrderInput] = useState('')
+  const [modalVisible, setModalVisible] = useState(false);
+  const [results, setResults] = useState({});
 
   const handleInputChange = (e) => {
     setOrderInput(e.target.value)
   }
 
-  const totalRemain = calculateTotalRemain(orders).toString()
+  const handleCalculate = () => {
+    const totalRemain = calculateTotalRemain(orders).toString()
+    const totalReceivableAmount = calculateTotalReceivableAmount(orderInput, totalRemain)
+    const totalPayable = calculateTotalPayable(orders, orderInput)
+    const weightedAveragePrice = calculateWeightedAveragePrice(totalPayable, totalReceivableAmount)
 
-  const totalReceivableAmount = calculateTotalReceivableAmount(orderInput, totalRemain)
+    setResults({
+      totalReceivableAmount,
+      totalPayable,
+      weightedAveragePrice,
+    });
+    setModalVisible(true)
+  }
 
-  const totalPayable = calculateTotalPayable(orders, orderInput)
+  const closeModal = () => {
+    setModalVisible(false)
+  }
 
-  const weightedAveragePrice = calculateWeightedAveragePrice(totalPayable, totalReceivableAmount)
-  console.log(weightedAveragePrice)
-
-  return (
-    <div className={styles.ordersListPercentageInput}>
-      <h2 className={styles.ordersListPercentageTitle}>
-        لطفا جهت محاسبه درخواست، میزان درصد درخواست را وارد کنید.
-      </h2>
-      <div className={styles.ordersListInputContainer}>
-        <input
-          type="text"
-          className={styles.ordersListInput}
-          onChange={handleInputChange}
-        />
-        <button className={styles.ordersListButton}>محاسبه کن</button>
-      </div>
+return (
+  <div className={styles.ordersListPercentageInput}>
+    <h2 className={styles.ordersListPercentageTitle}>
+      لطفا جهت محاسبه درخواست، میزان درصد درخواست را وارد کنید.
+    </h2>
+    <div className={styles.ordersListInputContainer}>
+      <input
+        type="text"
+        className={styles.ordersListInput}
+        onChange={handleInputChange}
+      />
+      <button className={styles.ordersListButton} onClick={handleCalculate}>محاسبه کن</button>
     </div>
-  )
+    {modalVisible && <OrderResult onClose={closeModal} results={results} />}
+  </div>
+)
 }
 
 export default OrderPercentageCalculator

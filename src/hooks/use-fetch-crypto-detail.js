@@ -25,6 +25,7 @@ function useFetchCryptoDetail(marketId, queryType) {
     fetchMarketsDataService(url)
       .then((data) => {
         setMarketsDetailData(data)
+        setHasError(false)
       })
       .catch(() => {
         setHasError(true)
@@ -35,8 +36,18 @@ function useFetchCryptoDetail(marketId, queryType) {
   }, [marketId, queryType])
 
   useEffect(() => {
-    fetchMarketDetail()
-  }, [fetchMarketDetail])
+    if (hasError) return;
+
+    fetchMarketDetail();
+
+    const intervalId = setInterval(() => {
+      fetchMarketDetail()
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, [fetchMarketDetail, hasError])
 
   return { isLoading, hasError, marketsDetailData, fetchMarketDetail }
 }
