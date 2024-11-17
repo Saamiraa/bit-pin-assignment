@@ -74,3 +74,35 @@ h6 {
   line-height: inherit;
   color: inherit;
 }
+
+.light {
+  --bg-color: #fff;
+  --text-color: rgb(8, 8, 8);
+  --border--color: rgba(29, 29, 29, 0.12);
+  --title--bg: #e5e7f0;
+  --button--color: #333;
+  --boxShadow--color: #fff;
+  --border--input: #ccc;
+  --hover--color: #b0b7d3;
+}
+
+.dark {
+  --bg-color: #2d2d2d;
+  --text-color: #cacaca74;
+  --border--color: rgba(198, 198, 198, 0.12);
+  --title--bg: #3d3d3d74;
+  --button--color: #0f0e0e;
+  --boxShadow--color: #313131;
+  --border--input: #757575;
+  --hover--color: #222222;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+p,
+h2,
+h3 {
+  color: var(--text-color);
+}

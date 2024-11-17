@@ -13,7 +13,7 @@
 .closeButton {
   background: none;
   border: none;
-  color: #333;
+  color: var(--button--color);
   font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
@@ -21,13 +21,11 @@
 
 .closeButton:hover {
   color: rgba(241, 15, 15, 0.842);
-  ;
   transform: scale(1.1);
 }
 
 .orderResultContainer {
-  border: 0.3px solid rgba(17, 17, 17, 0.344);
-  ;
+  border: 0.3px solid var(--border--color);
 }
 
 .orderResultInfo,
@@ -37,8 +35,8 @@
 }
 
 .orderResultInfo {
-  border-bottom: 0.3px solid rgba(17, 17, 17, 0.344);
-  background-color: #e5e7f0
+  border-bottom: 0.3px solid var(--border--color);
+  background-color: var(--title--bg)
 }
 
 .orderResultLabel,

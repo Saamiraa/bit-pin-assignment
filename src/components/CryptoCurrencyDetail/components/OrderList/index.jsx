@@ -2,6 +2,7 @@ import useFetchCryptoDetail from "../../../../hooks/use-fetch-crypto-detail";
 
 import ErrorMessage from "../../../../shared-components/ErrorMessage";
 import Loading from "../../../../shared-components/Loading";
+import EmptyOrderMessage from "../EmptyOrderMessage";
 import OrderPercentageCalculator from "../OrderPercentageCalculator";
 import OrderSummaryDetails from "../OrderSummaryDetails";
 import OrderTableHeader from "../OrderTableHeader";
@@ -14,10 +15,11 @@ function OrderList({ id, type }) {
   const { hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, type)
 
   const orderBookData = marketsDetailData.orders;
-
+  
   const topTenOrders = orderBookData ? orderBookData.slice(0, 10) : [];
 
   const renderContent = () => {
+    if (marketsDetailData.orders && marketsDetailData.orders.length === 0) return <EmptyOrderMessage />
     if (marketsDetailData.length === 0 && !hasError) return <Loading />;
     if (hasError) return <ErrorMessage onRetry={fetchMarketDetail} />
 

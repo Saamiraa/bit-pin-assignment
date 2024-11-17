@@ -14,39 +14,43 @@
   width: 100%;
   max-width: 200px;
   padding: 10px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border--input);
   border-radius: 5px;
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Vazir';
+  height: 40px;
 }
 
 .ordersListInput:focus {
-  border-color: #e5e7f0;
-  box-shadow: 0 0 1px #e5e7f0;
+  border-color: var(--title--bg);
+  box-shadow: 0 0 1px var(--title--bg);
 }
 
 .ordersListButton {
   padding: 10px 12px;
   margin-left: 10px;
   font-size: 12px;
-  background-color: #e5e7f0;
-  color: #fff;
+  background-color: var(--title--bg);
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
-  color: black;
-  font-family: 'Vazir'
+  font-family: 'Vazir';
+  height: 40px;
 }
 
+
 .ordersListButton:hover {
-  background-color: #b0b7d3;
+  background-color: var(--hover--color);
 }
 
 .ordersListButton:disabled {
   background-color: #f5f6fb;
-
 
 }
 
@@ -63,4 +67,10 @@
   font-size: 12px;
   color: rgba(241, 15, 15, 0.842);
   padding-top: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .ordersListButton {
+    width: 200px;
+  }
 }

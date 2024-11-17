@@ -6,7 +6,7 @@
 }
 
 .cryptoCard:hover {
-  background-color: #e5e7f0;
+  background-color: var(--title--bg);
   cursor: pointer;
 }
 
@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  color: var(--text-color);
 }
 
 .cryptoImage {
@@ -28,4 +29,8 @@
 
 .cryptoCode {
   font-size: 10px;
+}
+
+.cryptoPrice {
+  color: var(--text-color);
 }

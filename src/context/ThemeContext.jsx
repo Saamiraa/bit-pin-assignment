@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useEffect, useContext } from "react";
 
 const ThemeContext = createContext();
 
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -17,10 +23,4 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-const useTheme = () => {
-  return useContext(ThemeContext)
-}
-
-export default useTheme;
-
-export {ThemeProvider};
+export const useTheme = () => useContext(ThemeContext);

@@ -6,7 +6,7 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   position: fixed;
   z-index: 111;
-  background-color: #fff;
+  background-color: var(--bg-color);
   width: 100%;
 }
 
@@ -36,6 +36,7 @@
 
 .headerTitleItem {
   cursor: pointer;
+  color: var(--text-color);
 }
 
 
@@ -59,7 +60,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: var(--boxShadow--color);
     flex-direction: column;
     gap: 16px;
     padding: 16px;

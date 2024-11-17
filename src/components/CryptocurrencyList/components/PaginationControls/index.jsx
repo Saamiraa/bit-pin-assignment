@@ -8,16 +8,16 @@ function PaginationControls({ onPageChange, totalPages, currentPage }) {
   return (
     <div className={styles.paginationControls}>
       <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
         className={styles.paginationButton}
       >
         <FontAwesomeIcon icon={faAnglesRight} />
       </button>
-      <span>{currentPage.toLocaleString("fa-IR")} از {totalPages.toLocaleString("fa-IR")} </span>
+      <span className={styles.paginationCounter}>{currentPage.toLocaleString("fa-IR")} از {totalPages.toLocaleString("fa-IR")} </span>
       <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
         className={styles.paginationButton}
       >
         <FontAwesomeIcon icon={faAnglesLeft} />

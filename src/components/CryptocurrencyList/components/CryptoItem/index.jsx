@@ -11,7 +11,6 @@ function CryptoItem({ data }) {
   const titleFa = data.currency1.title_fa;
   const image = data.currency1.image;
   const price = data.price;
-  console.log('price', price)
   const code = data.code;
   const id = data.id
 

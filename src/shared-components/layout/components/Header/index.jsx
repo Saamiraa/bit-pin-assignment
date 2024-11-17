@@ -4,28 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { t } from "i18next";
 import styles from "./style.module.scss";
-import useTheme from "../../../../context/ThemeContext";
-import { useEffect } from "react";
+import { useTheme } from "../../../../context/ThemeContext";
 
 function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const handleThemeToggle = () => {
-    toggleTheme();
-  };
-
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
   };
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.body.style.backgroundColor = "rgb(45, 45, 45)";
-    } else {
-      document.body.style.backgroundColor = "white";
-    }
-  }, [theme]);
 
   return (
     <header className={styles.header}>
@@ -34,9 +21,15 @@ function Header() {
           <img alt="bitPin" src={icon} />
         </a>
       </div>
+
       <div className={styles.menuToggle} onClick={toggleMenu}>
-        {isMenuOpen ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
+        {isMenuOpen ? (
+          <FontAwesomeIcon icon={faTimes} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
       </div>
+
       <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
         <ul className={styles.headerTitleList}>
           <li className={styles.headerTitleItem}>
@@ -56,11 +49,12 @@ function Header() {
           </li>
         </ul>
       </nav>
+
       <div className={styles.headerThemeIcon}>
         {theme === "dark" ? (
-          <FontAwesomeIcon icon={faSun} onClick={handleThemeToggle} />
+          <FontAwesomeIcon icon={faSun} onClick={toggleTheme} />
         ) : (
-          <FontAwesomeIcon icon={faMoon} onClick={handleThemeToggle} />
+          <FontAwesomeIcon icon={faMoon} onClick={toggleTheme} />
         )}
       </div>
     </header>

@@ -2,7 +2,8 @@ import { useState } from 'react'
 import styles from './style.module.scss'
 import Buy from './Buy'
 import Sell from './Sell'
-import Transactions from './Transactions'
+import Transactions from './Transactions';
+
 function CryptoCurrencyDetail() {
 
   const [activeTab, setActiveTab] = useState('buyOrders')

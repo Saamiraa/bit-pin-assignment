@@ -6,9 +6,12 @@ import App from './App.jsx'
 import "./styles/global-styles.scss";
 
 import './localization/config.js'
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <ThemeProvider>
       <App />
+    </ThemeProvider>
   </StrictMode>,
 )
