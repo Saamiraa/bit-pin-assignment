@@ -1,7 +1,9 @@
+import { t } from "i18next";
+
 function EmptyOrderMessage() {
   return (
     <div>
-      <p>اطلاعاتی جهت نمایش موجود نیست.</p>
+      <p>{t("emptyOrderMessage.noData")}</p>
     </div>
   )
 }

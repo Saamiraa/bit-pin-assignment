@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import styles from './style.module.scss';
 import { calculateTotalPayable, calculateTotalReceivableAmount, calculateTotalRemain, calculateWeightedAveragePrice } from '../../../../utils/calculateDecimal';
 import OrderResult from '../OrderResult';
+
+import { t } from "i18next";
+
+import styles from './style.module.scss';
 
 function OrderPercentageCalculator({ orders }) {
   const [orderInput, setOrderInput] = useState('')
@@ -22,7 +25,7 @@ function OrderPercentageCalculator({ orders }) {
     const weightedAveragePrice = calculateWeightedAveragePrice(totalPayable, totalReceivableAmount)
 
     if (orderInput <= 0 || orderInput > 100) {
-      setError('مقدار وارد شده باید بین ۱ تا ۱۰۰ درصد باشد.');
+      setError(t("orderPercentageCalculator.error"));
       return
     }
 
@@ -41,7 +44,7 @@ function OrderPercentageCalculator({ orders }) {
   return (
     <div className={styles.ordersListPercentageInput}>
       <h2 className={styles.ordersListPercentageTitle}>
-        لطفا جهت محاسبه درخواست، میزان درصد درخواست را وارد کنید.
+        {t("orderPercentageCalculator.title")}
       </h2>
       <div className={styles.ordersListInputContainer}>
         <input
@@ -53,7 +56,8 @@ function OrderPercentageCalculator({ orders }) {
           className={styles.ordersListButton}
           onClick={handleCalculate}
           disabled={orderInput <= 0 && orderInput > 100}
-        >محاسبه کن</button>
+        >{t("orderPercentageCalculator.button")}
+        </button>
       </div>
       {error && <div className={styles.errorMessage}>{error}</div>}
       {modalVisible && <OrderResult onClose={closeModal} results={results} />}

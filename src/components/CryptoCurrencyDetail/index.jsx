@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import styles from './style.module.scss'
 import Buy from './Buy'
 import Sell from './Sell'
 import Transactions from './Transactions';
+
+import { t } from 'i18next';
+
+import styles from './style.module.scss'
 
 function CryptoCurrencyDetail() {
 
@@ -18,17 +21,17 @@ function CryptoCurrencyDetail() {
         <div
           className={`${styles.tab} ${activeTab === 'buyOrders' ? styles.activeTab : styles.defaultTab}`}
           onClick={() => handleTabClick('buyOrders')}>
-          <p>سفارشات خرید</p>
+          <p>{t('cryptoCurrencyDetail.tabs.buyOrders')}</p>
         </div>
         <div
           className={`${styles.tab} ${activeTab === 'sellOrders' ? styles.activeTab : styles.defaultTab}`}
           onClick={() => handleTabClick('sellOrders')}>
-          <p>سفارشات فروش</p>
+          <p>{t('cryptoCurrencyDetail.tabs.sellOrders')}</p>
         </div>
         <div
           className={`${styles.tab} ${activeTab === 'trades' ? styles.activeTab : styles.defaultTab}`}
           onClick={() => handleTabClick('trades')}>
-          <p>معاملات</p>
+          <p>{t('cryptoCurrencyDetail.tabs.trades')}</p>
         </div>
       </div>
       <div className={styles.detailsContent}>
@@ -37,7 +40,7 @@ function CryptoCurrencyDetail() {
         {activeTab === 'trades' && <Transactions />}
       </div>
     </div>
-  )
+  );
 }
 
 export default CryptoCurrencyDetail

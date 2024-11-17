@@ -55,5 +55,48 @@
       "name": "نام رمز ارز",
       "price": "قیمت"
     }
+  },
+  "cryptoCurrencyDetail": {
+    "tabs": {
+      "buyOrders": "سفارشات خرید",
+      "sellOrders": "سفارشات فروش",
+      "trades": "معاملات"
+    }
+  },
+  "transactions": {
+    "header": {
+      "price": "قیمت",
+      "amount": "مقدار معامله‌شده",
+      "time": "زمان"
+    }
+  },
+  "orderTable": {
+    "header": {
+      "price": "قیمت",
+      "value": "ارزش",
+      "remaining": "باقی مانده"
+    }
+  },
+  "orderSummary": {
+    "labels": {
+      "remainingAmount": "مجموع ارز باقی مانده",
+      "totalValue": "مجموع ارزش ارز",
+      "weightedAveragePrice": "میانگین وزن‌دار قیمت"
+    }
+  },
+  "orderPercentageCalculator": {
+    "title": "لطفا جهت محاسبه درخواست، میزان درصد درخواست را وارد کنید.",
+    "error": "مقدار وارد شده باید بین ۱ تا ۱۰۰ درصد باشد.",
+    "button": "محاسبه کن"
+  },
+  "emptyOrderMessage": {
+    "noData": "اطلاعاتی جهت نمایش موجود نیست."
+  },
+  "orderResult": {
+    "title": "نتایج محاسبه",
+    "totalReceivableAmountLabel": "مجموع حجم ارز قابل دریافت",
+    "totalPayableLabel": "مجموع مبلغ قابل پرداخت",
+    "weightedAveragePriceLabel": "میانگین وزنی قیمت",
+    "closeButton": "بستن"
   }
 }

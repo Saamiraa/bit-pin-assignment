@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import { calculateTotal, weightedAveragePrice } from '../../../../utils/calculateDecimal'
 import { formatNumberToPersian } from '../../../../utils/localizedNumber'
+
+import { t } from "i18next";
+
 import styles from './style.module.scss'
 
 function OrderSummaryDetails({ orders }) {
@@ -12,9 +15,9 @@ function OrderSummaryDetails({ orders }) {
   return (
     <div className={styles.ordersListSummary}>
       <div className={styles.ordersListSummaryLabels}>
-        <p>مجموع ارز باقی مانده</p>
-        <p>مجموع ارزش ارز</p>
-        <p>میانگین وزن‌دار قیمت</p>
+        <p>{t("orderSummary.labels.remainingAmount")}</p>
+        <p>{t("orderSummary.labels.totalValue")}</p>
+        <p>{t("orderSummary.labels.weightedAveragePrice")}</p>
       </div>
       <div className={styles.ordersListSummaryValues}>
         <p>{formatNumberToPersian(+remain)}</p>

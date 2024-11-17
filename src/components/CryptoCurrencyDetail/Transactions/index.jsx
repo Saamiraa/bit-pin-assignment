@@ -1,12 +1,15 @@
 import { useParams } from "react-router-dom";
 
-import styles from './style.module.scss'
 import useFetchCryptoDetail from "../../../hooks/use-fetch-crypto-detail";
 import Loading from "../../../shared-components/Loading";
 import ErrorMessage from "../../../shared-components/ErrorMessage";
 import { getPersianDateTime } from "../../../utils/time";
 import { formatNumberToPersian } from "../../../utils/localizedNumber";
 import EmptyOrderMessage from "../components/EmptyOrderMessage";
+
+import { t } from "i18next";
+
+import styles from './style.module.scss'
 
 function Transactions() {
   const { id } = useParams();
@@ -25,9 +28,9 @@ function Transactions() {
     return (
       <div className={styles.transactionsContainer}>
         <div className={styles.transactionsHeader}>
-          <p className={styles.transactionsHeaderItem}>قیمت</p>
-          <p className={styles.transactionsHeaderItem}>مقدار معامله‌شده</p>
-          <p className={styles.transactionsHeaderItem}>زمان</p>
+          <p className={styles.transactionsHeaderItem}>{t("transactions.header.price")}</p>
+          <p className={styles.transactionsHeaderItem}>{t("transactions.header.amount")}</p>
+          <p className={styles.transactionsHeaderItem}>{t("transactions.header.time")}</p>
         </div>
         {topTenOrders.map((order, index) => (
           <div key={index} className={styles.transactionsRows}>
