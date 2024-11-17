@@ -47,3 +47,13 @@
 .defaultTab {
   border-bottom: 1px solid rgba(29, 29, 29, 0.12);
 }
+
+@media screen and (max-width: 768px) {
+  .cryptoDetailContainer {
+    margin: 12px 22px;
+  }
+
+  .tab {
+    padding: 4px 6px;
+  }
+}

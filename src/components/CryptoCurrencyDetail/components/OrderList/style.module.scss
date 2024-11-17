@@ -2,3 +2,9 @@
   padding: 28px 40px;
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .orderContainer {
+    padding: 22px 14px;
+  }
+}

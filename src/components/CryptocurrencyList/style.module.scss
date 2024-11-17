@@ -5,3 +5,9 @@
   width: 100%;
   min-height: 400px;
 }
+
+@media screen and (max-width: 768px) {
+  .cryptoContainer {
+    margin: 20px 40px;
+  }
+}

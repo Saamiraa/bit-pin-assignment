@@ -16,18 +16,20 @@
 
 .ordersListSummaryLabels p {
   font-weight: 500;
+  text-align: center;
 }
 
 .ordersListSummaryLabels p,
 .ordersListSummaryValues p {
   display: flex;
   justify-content: center;
-  border-left: 0.3px solid rgba(17, 17, 17, 0.344);
   font-size: 12px;
   padding: 6px;
 }
 
-.ordersListSummaryLabels p:last-child,
-.ordersListSummaryValues p:last-child {
-  border-left: none;
+
+@media screen and (max-width: 768px) {
+  .ordersListSummary {
+    margin: 20px 8px;
+  }
 }

@@ -46,11 +46,6 @@
   font-size: 12px;
   display: flex;
   justify-content: center;
-  border-left: 0.3px solid rgba(17, 17, 17, 0.344);
   padding: 4px;
-}
-
-.orderResultLabel:last-child,
-.orderResultValue:last-child {
-  border-left: none;
+  text-align: center;
 }
