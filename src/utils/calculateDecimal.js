@@ -1,19 +1,23 @@
 import Decimal from 'decimal.js';
 
+const safeDecimal = (value) => {
+  return new Decimal(value || 0);
+};
+
 export const calculateTotal = (arr, type) => {
   return arr.reduce((accumulator, currentValue) => {
-    return accumulator.plus(new Decimal(currentValue[type] || 0));
+    return accumulator.plus(safeDecimal(currentValue[type]));
   }, new Decimal(0)).toString();
-}
+};
 
-export const weightedAveragePrice = orders => {
+export const weightedAveragePrice = (orders) => {
   const totalValue = orders.reduce((acc, order) => {
-    return acc.plus(new Decimal(order.amount).times(new Decimal(order.price)));
-  }, new Decimal(0));
+    return acc.plus(safeDecimal(order.amount).times(safeDecimal(order.price)));
+  }, safeDecimal(0));
 
   const totalAmount = orders.reduce((acc, order) => {
-    return acc.plus(new Decimal(order.amount));
-  }, new Decimal(0));
+    return acc.plus(safeDecimal(order.amount));
+  }, safeDecimal(0));
 
   return totalValue.dividedBy(totalAmount).toString();
 };
@@ -31,29 +35,30 @@ export const calculateTotalReceivableAmount = (inputPercentage, totalRemain) => 
   return percentage.dividedBy(100).times(remain).toString()
 }
 
-
 export const calculateTotalPayable = (data, percentage) => {
-  const totalRemain = calculateTotalRemain(data)
-
-  const requiredRemain = totalRemain.mul(new Decimal(percentage || 0).div(100));
+  const totalRemain = calculateTotalRemain(data);
+  const requiredRemain = safeDecimal(totalRemain).times(safeDecimal(percentage).div(100));
   let remainToTake = requiredRemain;
-  let totalPayable = new Decimal(0);
+  let totalPayable = safeDecimal(0);
 
-  data.forEach((item) => {
+  // Create a copy of the array to avoid reversing the original
+  const reverseData = [...data].reverse();
+
+  reverseData.forEach((item) => {
     if (remainToTake.lte(0)) return;
 
-    const currentRemain = new Decimal(item.remain || 0);
-    const price = new Decimal(item.price || 0);
-    const value = new Decimal(item.value || 1);
+    const currentRemain = safeDecimal(item.remain);
+    const price = safeDecimal(item.price);
 
     const usableRemain = Decimal.min(currentRemain, remainToTake);
-    const contribution = usableRemain.mul(price).div(value);
+    const contribution = usableRemain.mul(price);
     totalPayable = totalPayable.plus(contribution);
     remainToTake = remainToTake.minus(usableRemain);
   });
 
   return totalPayable.toString();
 };
+
 
 export const calculateWeightedAveragePrice = (payableAmount, receivableAmount) => {
   const totalPayable = new Decimal(payableAmount || "0");

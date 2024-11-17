@@ -13,8 +13,6 @@ function OrderList({ id, type }) {
 
   const { hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, type)
 
-  console.log(marketsDetailData)
-
   const orderBookData = marketsDetailData.orders;
 
   const topTenOrders = orderBookData ? orderBookData.slice(0, 10) : [];

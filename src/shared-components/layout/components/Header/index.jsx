@@ -1,19 +1,44 @@
-import icon from '../../../../assets/images/icon.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
-import { t } from "i18next"
-import styles from './style.module.scss'
+import { useState } from "react";
+import icon from "../../../../assets/images/icon.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { t } from "i18next";
+import styles from "./style.module.scss";
+import useTheme from "../../../../context/ThemeContext";
+import { useEffect } from "react";
 
 function Header() {
+  const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const handleThemeToggle = () => {
+    toggleTheme();
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.style.backgroundColor = "rgb(45, 45, 45)";
+    } else {
+      document.body.style.backgroundColor = "white";
+    }
+  }, [theme]);
+
   return (
     <header className={styles.header}>
-      <div className={styles.headerTitle}>
+      <div className={styles.logo}>
+        <a href="#">
+          <img alt="bitPin" src={icon} />
+        </a>
+      </div>
+      <div className={styles.menuToggle} onClick={toggleMenu}>
+        {isMenuOpen ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
+      </div>
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
         <ul className={styles.headerTitleList}>
-          <li className={styles.headerTitleItem}>
-            <a href="#">
-              <img alt="bitPin" src={icon} />
-            </a>
-          </li>
           <li className={styles.headerTitleItem}>
             <a href="#">{t("layout.header.easyPurchase")}</a>
           </li>
@@ -30,17 +55,16 @@ function Header() {
             <a href="#">{t("layout.header.education")}</a>
           </li>
         </ul>
-      </div>
+      </nav>
       <div className={styles.headerThemeIcon}>
-        <a href="#" target="_blank">
-          <FontAwesomeIcon icon={faMoon} />
-        </a>
-        <a href="#" target="_blank">
-          <FontAwesomeIcon icon={faSun} />
-        </a>
+        {theme === "dark" ? (
+          <FontAwesomeIcon icon={faSun} onClick={handleThemeToggle} />
+        ) : (
+          <FontAwesomeIcon icon={faMoon} onClick={handleThemeToggle} />
+        )}
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

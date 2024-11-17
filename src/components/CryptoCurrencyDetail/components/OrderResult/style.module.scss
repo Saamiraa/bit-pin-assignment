@@ -1,0 +1,56 @@
+.orderResultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+}
+
+.orderResultTitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.closeButton:hover {
+  color: rgba(241, 15, 15, 0.842);
+  ;
+  transform: scale(1.1);
+}
+
+.orderResultContainer {
+  border: 0.3px solid rgba(17, 17, 17, 0.344);
+  ;
+}
+
+.orderResultInfo,
+.orderResultValues {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.orderResultInfo {
+  border-bottom: 0.3px solid rgba(17, 17, 17, 0.344);
+  background-color: #e5e7f0
+}
+
+.orderResultLabel,
+.orderResultValue {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  border-left: 0.3px solid rgba(17, 17, 17, 0.344);
+  padding: 4px;
+}
+
+.orderResultLabel:last-child,
+.orderResultValue:last-child {
+  border-left: none;
+}

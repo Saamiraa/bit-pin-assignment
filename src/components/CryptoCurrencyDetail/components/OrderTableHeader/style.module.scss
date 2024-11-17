@@ -3,4 +3,10 @@
   grid-template-columns: repeat(3, 1fr);
   border-bottom: 0.3px solid rgba(17, 17, 17, 0.344);
   justify-items: center;
+  padding: 4px 0;
+}
+
+.orderHeaderItem {
+  font-size: 12px;
+  font-weight: 500;
 }

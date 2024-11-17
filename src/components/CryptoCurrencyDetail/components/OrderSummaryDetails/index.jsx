@@ -1,8 +1,14 @@
 /* eslint-disable react/prop-types */
 import { calculateTotal, weightedAveragePrice } from '../../../../utils/calculateDecimal'
+import { formatNumberToPersian } from '../../../../utils/localizedNumber'
 import styles from './style.module.scss'
 
-function OrderSummaryDetails({orders}) {
+function OrderSummaryDetails({ orders }) {
+
+  const remain = calculateTotal(orders, 'remain');
+  const value = calculateTotal(orders, 'value')
+  const price = Number(weightedAveragePrice(orders)).toFixed(2)
+
   return (
     <div className={styles.ordersListSummary}>
       <div className={styles.ordersListSummaryLabels}>
@@ -11,9 +17,9 @@ function OrderSummaryDetails({orders}) {
         <p>میانگین وزن‌دار قیمت</p>
       </div>
       <div className={styles.ordersListSummaryValues}>
-        <p>{calculateTotal(orders, 'remain')}</p>
-        <p>{calculateTotal(orders, 'value')}</p>
-        <p>{Number(weightedAveragePrice(orders)).toFixed(2)}</p>
+        <p>{formatNumberToPersian(+remain)}</p>
+        <p>{formatNumberToPersian(+value)}</p>
+        <p>{formatNumberToPersian(+price)}</p>
       </div>
     </div>
   )

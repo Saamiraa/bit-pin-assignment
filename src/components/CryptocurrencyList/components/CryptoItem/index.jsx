@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useNavigate } from 'react-router-dom';
-import { localizedNumber } from '../../../../utils/localizedNumber';
+import { formatNumberToPersian } from '../../../../utils/localizedNumber';
 import styles from './styles.module.scss'
 
 function CryptoItem({ data }) {
@@ -11,12 +11,11 @@ function CryptoItem({ data }) {
   const titleFa = data.currency1.title_fa;
   const image = data.currency1.image;
   const price = data.price;
-  const formattedNumber = new Intl.NumberFormat().format(price);
+  console.log('price', price)
   const code = data.code;
   const id = data.id
 
   const handleNavigation = (id) => {
-    console.log(id)
     navigate(`/coin/${id}`)
   }
 
@@ -30,7 +29,7 @@ function CryptoItem({ data }) {
         </div>
       </div>
       <div className={styles.cryptoPrice}>
-        <span>{localizedNumber(formattedNumber)}</span>
+        <span>{formatNumberToPersian(+price)}</span>
       </div>
     </div>
   )

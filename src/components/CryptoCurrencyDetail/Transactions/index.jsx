@@ -5,6 +5,7 @@ import useFetchCryptoDetail from "../../../hooks/use-fetch-crypto-detail";
 import Loading from "../../../shared-components/Loading";
 import ErrorMessage from "../../../shared-components/ErrorMessage";
 import { getPersianDateTime } from "../../../utils/time";
+import { formatNumberToPersian } from "../../../utils/localizedNumber";
 
 function Transactions() {
 
@@ -27,9 +28,9 @@ function Transactions() {
         </div>
         {topTenOrders && topTenOrders.map((order, index) => (
           <div key={index} className={styles.transactionsRows}>
-            <p className={styles.transactionsPrice}>{order.price}</p>
-            <p className={styles.transactionsValue}>{order.match_amount}</p>
-            <p className={styles.transactionsRemaining}>{getPersianDateTime(order.time * 1000)}</p>
+            <p className={styles.transactionsValue}>{formatNumberToPersian(+order.price)}</p>
+            <p className={styles.transactionsValue}>{formatNumberToPersian(+order.match_amount)}</p>
+            <p className={styles.transactionsValue}>{getPersianDateTime(order.time * 1000)}</p>
           </div>
         ))}
       </div>

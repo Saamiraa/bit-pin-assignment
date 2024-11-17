@@ -1,3 +1,9 @@
+.ordersListPercentageTitle {
+  font-size: 12px;
+  padding-bottom: 16px;
+  font-weight: 500;
+}
+
 .ordersListInputContainer {
   display: flex;
   align-items: center;
@@ -23,6 +29,7 @@
 .ordersListButton {
   padding: 10px 12px;
   margin-left: 10px;
+  font-size: 12px;
   background-color: #e5e7f0;
   color: #fff;
   border: none;
@@ -37,6 +44,12 @@
   background-color: #b0b7d3;
 }
 
+.ordersListButton:disabled {
+  background-color: #f5f6fb;
+
+
+}
+
 .ordersListButton:active {
   background-color: #b0b7d3;
 }
@@ -44,4 +57,10 @@
 .ordersListButton:focus {
   outline: none;
   box-shadow: 0 0 1px #b0b7d3;
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: rgba(241, 15, 15, 0.842);
+  padding-top: 12px;
 }
