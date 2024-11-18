@@ -27,6 +27,7 @@ This project implements a percentage-based order placement system for market tra
   - React with React Router for routing.
   - SCSS and Sass for styling.
   - Decimal.js library for precise decimal calculations.
+  - Vite for fast development and build tool.
 
 - **Backend API** (External):
   - Fetches market data, buy/sell orders, and trades from the following API endpoints:
@@ -40,9 +41,7 @@ This project implements a percentage-based order placement system for market tra
 1. Clone this repository:
    ```bash
    git clone https://github.com/Saamiraa/bit-pin-assignment.git
-2. cd <project-directory>
-
-3. npm install
+2. npm install
  
-4. npm run dev
+3. npm run dev
 
