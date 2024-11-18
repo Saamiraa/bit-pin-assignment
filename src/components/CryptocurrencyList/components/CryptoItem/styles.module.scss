@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .cryptoCard:hover {
@@ -13,22 +13,22 @@
 .cryptoCardHeader {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .cryptoTitle {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
   color: var(--text-color);
 }
 
 .cryptoImage {
-  width: 32px;
+  width: 2rem;
 }
 
 .cryptoCode {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .cryptoPrice {

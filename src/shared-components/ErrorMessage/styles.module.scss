@@ -1,22 +1,21 @@
 .errorMessage {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  font-size: 14px;
+  gap: 1rem;
+  font-size: 0.875rem;
 }
 
 .errorMessageButtonContainer {
   margin: 0 auto;
-
 }
 
 .errorMessageButton {
   background-color: #e22424;
   color: #ffffff;
   border: none;
-  border-radius: 12px;
-  padding: 12px 18px;
-  font-size: 14px;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.125rem;
+  font-size: 0.875rem;
   cursor: pointer;
   font-family: "Vazir";
 }

@@ -1,13 +1,13 @@
 .cryptoList {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 18px;
+  gap: 1.125rem;
+  padding: 1.125rem;
   border-top: 1px solid var(--border--color);
 }
 
 .cryptoListHeader {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  font-size: 14px;
+  font-size: 0.875rem;
 }

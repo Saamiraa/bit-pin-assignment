@@ -1,32 +1,33 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 32px 24px;
-  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.12);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 -0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.12);
 }
 
 .footerSection {
-  line-height: 18px;
+  line-height: 1.125rem;
   cursor: pointer;
 }
 
 .footerTitle {
   font-weight: 700;
-  font-size: 14px;
-  padding-bottom: 4px;
+  font-size: 0.875rem;
+  padding-bottom: 0.25rem;
 }
 
 .footerItem {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
+
   .footer {
-    padding: 22px 12px;
+    padding: 1.375rem 0.75rem;
   }
 
   .footerTitle {
     font-weight: 500;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }

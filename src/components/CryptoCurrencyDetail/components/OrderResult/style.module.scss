@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 14px;
+  padding-bottom: 0.875rem;
 }
 
 .orderResultTitle {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -14,7 +14,7 @@
   background: none;
   border: none;
   color: var(--button--color);
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
 }
@@ -25,7 +25,7 @@
 }
 
 .orderResultContainer {
-  border: 0.3px solid var(--border--color);
+  border: 0.01875rem solid var(--border--color);
 }
 
 .orderResultInfo,
@@ -35,15 +35,15 @@
 }
 
 .orderResultInfo {
-  border-bottom: 0.3px solid var(--border--color);
-  background-color: var(--title--bg)
+  border-bottom: 0.01875rem solid var(--border--color);
+  background-color: var(--title--bg);
 }
 
 .orderResultLabel,
 .orderResultValue {
-  font-size: 12px;
+  font-size: 0.75rem;
   display: flex;
   justify-content: center;
-  padding: 4px;
+  padding: 0.25rem;
   text-align: center;
 }

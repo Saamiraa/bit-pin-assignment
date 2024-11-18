@@ -1,12 +1,12 @@
 .orderHeader {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: 0.3px solid var(--border--color);
+  border-bottom: 0.01875rem solid var(--border--color);
   justify-items: center;
-  padding: 4px 0;
+  padding: 0.25rem 0;
 }
 
 .orderHeaderItem {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
