@@ -16,13 +16,11 @@ function Transactions() {
 
   const { hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, "matches");
 
-  const matches = Array.isArray(marketsDetailData) ? marketsDetailData : [];
-
-  const topTenOrders = matches.slice(0, 10);
+  const topTenOrders = marketsDetailData ? marketsDetailData.slice(0, 10) : [];
 
   const renderContent = () => {
     if (marketsDetailData && marketsDetailData.length === 0 && !hasError) return <Loading />;
-    if (matches && matches.length === 0) return <EmptyOrderMessage />;
+    if (topTenOrders && topTenOrders.length === 0) return <EmptyOrderMessage />;
     if (hasError) return <ErrorMessage onRetry={fetchMarketDetail} />;
 
     return (
