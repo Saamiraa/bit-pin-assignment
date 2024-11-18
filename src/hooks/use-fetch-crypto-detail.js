@@ -4,7 +4,7 @@ import fetchMarketsDataService from '../services/request'
 function useFetchCryptoDetail(marketId, queryType) {
   const [isLoading, setIsLoading] = useState(false)
   const [hasError, setHasError] = useState(false)
-  const [marketsDetailData, setMarketsDetailData] = useState([])
+  const [marketsDetailData, setMarketsDetailData] = useState(undefined)
 
   const fetchMarketDetail = useCallback(() => {
 

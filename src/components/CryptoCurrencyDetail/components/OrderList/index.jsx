@@ -14,13 +14,13 @@ function OrderList({ id, type }) {
 
   const { hasError, marketsDetailData, fetchMarketDetail } = useFetchCryptoDetail(id, type)
 
-  const orderBookData = marketsDetailData.orders;
-  
+  const orderBookData = marketsDetailData && marketsDetailData.orders;
+
   const topTenOrders = orderBookData ? orderBookData.slice(0, 10) : [];
 
   const renderContent = () => {
-    if (marketsDetailData.orders && marketsDetailData.orders.length === 0) return <EmptyOrderMessage />
-    if (marketsDetailData.length === 0 && !hasError) return <Loading />;
+    if (orderBookData && orderBookData.length === 0) return <EmptyOrderMessage />
+    if (!marketsDetailData && !hasError) return <Loading />;
     if (hasError) return <ErrorMessage onRetry={fetchMarketDetail} />
 
     return (

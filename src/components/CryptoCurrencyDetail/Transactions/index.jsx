@@ -19,7 +19,7 @@ function Transactions() {
   const topTenOrders = marketsDetailData ? marketsDetailData.slice(0, 10) : [];
 
   const renderContent = () => {
-    if (marketsDetailData && marketsDetailData.length === 0 && !hasError) return <Loading />;
+    if (!marketsDetailData && !hasError) return <Loading />;
     if (topTenOrders && topTenOrders.length === 0) return <EmptyOrderMessage />;
     if (hasError) return <ErrorMessage onRetry={fetchMarketDetail} />;
 
