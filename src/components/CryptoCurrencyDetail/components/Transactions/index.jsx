@@ -1,11 +1,14 @@
 import { useParams } from "react-router-dom";
 
-import useFetchCryptoDetail from "../../../hooks/use-fetch-crypto-detail";
-import Loading from "../../../shared-components/Loading";
-import ErrorMessage from "../../../shared-components/ErrorMessage";
-import { getPersianDateTime } from "../../../utils/time";
-import { formatNumberToPersian } from "../../../utils/localizedNumber";
-import EmptyOrderMessage from "../components/EmptyOrderMessage";
+import Loading from "../../../../shared-components/Loading";
+import ErrorMessage from "../../../../shared-components/ErrorMessage";
+
+import { getPersianDateTime } from "../../../../utils/time";
+import { formatNumberToPersian } from "../../../../utils/localizedNumber";
+
+import EmptyOrderMessage from "../EmptyOrderMessage";
+
+import useFetchCryptoDetail from "../../hooks/use-fetch-crypto-detail";
 
 import { t } from "i18next";
 

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import Buy from './Buy'
-import Sell from './Sell'
-import Transactions from './Transactions';
+
+import Buy from './components/Buy';
+import Sell from './components/Sell';
+import Transactions from './components/Transactions';
 
 import { t } from 'i18next';
 

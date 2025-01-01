@@ -1,5 +1,3 @@
-import useFetchCryptoDetail from "../../../../hooks/use-fetch-crypto-detail";
-
 import ErrorMessage from "../../../../shared-components/ErrorMessage";
 import Loading from "../../../../shared-components/Loading";
 import EmptyOrderMessage from "../EmptyOrderMessage";
@@ -7,6 +5,8 @@ import OrderPercentageCalculator from "../OrderPercentageCalculator";
 import OrderSummaryDetails from "../OrderSummaryDetails";
 import OrderTableHeader from "../OrderTableHeader";
 import OrderTableRow from "../OrderTableRow";
+
+import useFetchCryptoDetail from "../../hooks/use-fetch-crypto-detail";
 
 import styles from './style.module.scss'
 

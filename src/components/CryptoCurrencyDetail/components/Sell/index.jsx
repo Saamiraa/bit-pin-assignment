@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom"
-import OrdersList from "../components/OrderList"
+
+import OrderList from "../OrderList"
 
 function Sell() {
 
   const { id } = useParams()
 
   return (
-    <OrdersList id={id} type="sell" />
+    <OrderList id={id} type="sell" />
   )
 
 }

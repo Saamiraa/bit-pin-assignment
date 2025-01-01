@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import fetchMarketsDataService from '../services/request'
+
+import fetchMarketsDataService from '../../../services/request'
 
 function useFetchCryptoDetail(marketId, queryType) {
   const [isLoading, setIsLoading] = useState(false)

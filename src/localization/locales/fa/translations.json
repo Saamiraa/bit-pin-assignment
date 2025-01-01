@@ -98,5 +98,8 @@
     "totalPayableLabel": "مجموع مبلغ قابل پرداخت",
     "weightedAveragePriceLabel": "میانگین وزنی قیمت",
     "closeButton": "بستن"
+  },
+  "InitialPlaceholder": {
+    "text": "یک تب را انتخاب کنید تا اطلاعات نمایش داده شود."
   }
 }

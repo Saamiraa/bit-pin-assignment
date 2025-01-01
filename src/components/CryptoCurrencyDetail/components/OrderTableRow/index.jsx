@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { formatNumberToPersian } from '../../../../utils/localizedNumber'
+
 import styles from './style.module.scss'
 
 function OrderTableRow({ price, value, remain }) {

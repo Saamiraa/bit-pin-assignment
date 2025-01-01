@@ -4,10 +4,10 @@ import { t } from "i18next"
 
 import styles from './styles.module.scss';
 
-function ErrorMessage({ onRetry }) {
+function ErrorMessage({ message, onRetry }) {
   return (
     <div className={styles.errorMessage}>
-      <p className={styles.errorMessageText}>{t("error.errorMessage")}</p>
+      <p className={styles.errorMessageText}>{message || t("error.errorMessage")}</p>
       <div className={styles.errorMessageButtonContainer}>
         <button className={styles.errorMessageButton} onClick={onRetry}>
           {t("error.retry")}
