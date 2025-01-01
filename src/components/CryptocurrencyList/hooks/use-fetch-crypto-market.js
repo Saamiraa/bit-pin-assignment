@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import fetchMarketsDataService from "../../../services/request";
 
-import { API_STATUS_TYPES } from "../constants";
+import { API_STATUS_TYPES } from "../../../utils/constants";
 
 function useFetchCryptoMarket() {
 

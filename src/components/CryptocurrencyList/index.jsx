@@ -10,7 +10,7 @@ import CryptoListContent from "./components/CryptoListContent";
 import PaginationControls from "./components/PaginationControls";
 import InitialPlaceholder from "./components/InitialPlaceholder";
 
-import { API_STATUS_TYPES } from "./constants";
+import { API_STATUS_TYPES } from "../../utils/constants";
 
 import styles from './style.module.scss'
 

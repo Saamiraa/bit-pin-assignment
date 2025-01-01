@@ -1,11 +1,16 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from "react";
 
-import fetchMarketsDataService from '../../../services/request'
+import { API_STATUS_TYPES } from "../../../utils/constants";
+
+import fetchMarketsDataService from "../../../services/request";
 
 function useFetchCryptoDetail(marketId, queryType) {
-  const [isLoading, setIsLoading] = useState(false)
-  const [hasError, setHasError] = useState(false)
-  const [marketsDetailData, setMarketsDetailData] = useState(undefined)
+
+  const [state, setState] = useState({
+    status: API_STATUS_TYPES.IDLE,
+    data: null,
+    error: null
+  })
 
   const fetchMarketDetail = useCallback(() => {
 
@@ -20,37 +25,38 @@ function useFetchCryptoDetail(marketId, queryType) {
     } else {
       return
     }
-
-    setIsLoading(true);
-    setHasError(false);
+    if (state.status === API_STATUS_TYPES.IDLE) {
+      setState({ status: API_STATUS_TYPES.PENDING, data: null, error: null })
+    }
     fetchMarketsDataService(url)
-      .then((data) => {
-        setMarketsDetailData(data)
-        setHasError(false)
+      .then((response) => {
+        setState({ status: API_STATUS_TYPES.RESOLVED, data: response, error: null })
       })
-      .catch(() => {
-        setHasError(true)
+      .catch((error) => {
+        setState({ status: API_STATUS_TYPES.REJECTED, data: null, error })
       })
-      .finally(() => {
-        setIsLoading(false)
-      })
-  }, [marketId, queryType])
+  }, [marketId, queryType, state.status])
 
   useEffect(() => {
-    if (hasError) return;
 
-    fetchMarketDetail();
+    if (state.error === API_STATUS_TYPES.REJECTED) return
+
+    fetchMarketDetail()
 
     const intervalId = setInterval(() => {
       fetchMarketDetail()
     }, 3000);
 
-    return () => {
-      clearInterval(intervalId)
-    }
-  }, [fetchMarketDetail, hasError])
+    return () => clearInterval(intervalId)
 
-  return { isLoading, hasError, marketsDetailData, fetchMarketDetail }
+  }, [fetchMarketDetail, state.error])
+
+  return {
+    status: state.status,
+    data: state.data,
+    error: state.error,
+    refetch: fetchMarketDetail
+  }
 }
 
-export default useFetchCryptoDetail;
+export default useFetchCryptoDetail
