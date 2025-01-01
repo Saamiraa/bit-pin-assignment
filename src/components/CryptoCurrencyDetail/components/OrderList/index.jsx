@@ -13,14 +13,14 @@ import { API_STATUS_TYPES } from "../../../../utils/constants";
 
 function OrderList({ id, type }) {
 
-  const { status, data: marketsDetailData, error, refetch } = useFetchCryptoDetail(id, type)
+  const { status, data: marketsDetailData, refetch } = useFetchCryptoDetail(id, type)
 
   const orderBookData = marketsDetailData && marketsDetailData.orders;
 
   const topTenOrders = orderBookData ? orderBookData.slice(0, 10) : [];
 
   const renderContent = () => {
-    if (status === API_STATUS_TYPES.IDLE) {
+    if (orderBookData && orderBookData.length === 0) {
       return <EmptyOrderMessage />;
     }
 
@@ -29,7 +29,7 @@ function OrderList({ id, type }) {
     }
 
     if (status === API_STATUS_TYPES.REJECTED) {
-      return <ErrorMessage onRetry={refetch} message={error?.message} />;
+      return <ErrorMessage onRetry={refetch} />;
     }
 
     if (status === API_STATUS_TYPES.RESOLVED) {

@@ -39,17 +39,17 @@ function useFetchCryptoDetail(marketId, queryType) {
 
   useEffect(() => {
 
-    if (state.error === API_STATUS_TYPES.REJECTED) return
+    if (state.status === API_STATUS_TYPES.REJECTED) return
 
     fetchMarketDetail()
 
     const intervalId = setInterval(() => {
       fetchMarketDetail()
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(intervalId)
 
-  }, [fetchMarketDetail, state.error])
+  }, [fetchMarketDetail, state.error, state.status])
 
   return {
     status: state.status,
